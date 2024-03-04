@@ -1,5 +1,7 @@
 package com.luminahi.todo.model;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +22,7 @@ public class Task {
     private String description;
     
     @Column(nullable = false)
-    private boolean isDone;
+    private Boolean isDone;
     
     public Long getId() {
         return id;
@@ -44,5 +46,36 @@ public class Task {
     
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Boolean getIsDone() {
+        return isDone;
+    }
+    
+    public void setIsDone(boolean isDone) {
+        this.isDone = isDone;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Title: %s\nDescription: %s\nID: %s\n", title, description, id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, id, isDone, title);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Task other = (Task) obj;
+        return Objects.equals(description, other.description) && Objects.equals(id, other.id) && isDone == other.isDone
+                && Objects.equals(title, other.title);
     }
 }
