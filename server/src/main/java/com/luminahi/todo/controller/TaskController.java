@@ -5,6 +5,7 @@ import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -18,6 +19,7 @@ import java.beans.PropertyDescriptor;
 import com.luminahi.todo.model.Task;
 import com.luminahi.todo.repository.TaskRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class TaskController {
         
