@@ -24,6 +24,14 @@ public class Task {
     @Column(nullable = false)
     private Boolean isDone;
     
+    public Task(String title, String description, Boolean isDone) {
+        this.title = title;
+        this.description = description;
+        this.isDone = isDone;
+    }
+    
+    public Task() {}
+
     public Long getId() {
         return id;
     }
@@ -52,13 +60,13 @@ public class Task {
         return isDone;
     }
     
-    public void setIsDone(boolean isDone) {
+    public void setIsDone(Boolean isDone) {
         this.isDone = isDone;
     }
     
     @Override
     public String toString() {
-        return String.format("Title: %s\nDescription: %s\nID: %s\n", title, description, id);
+        return String.format("Title: %s\nDescription: %s\nID: %s\nisDone %s", title, description, id, isDone);
     }
 
     @Override
