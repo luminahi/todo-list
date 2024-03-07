@@ -1,0 +1,90 @@
+/*  setting up workspace */
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* application itself */
+
+html {
+    height: 100%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: pink;
+}
+
+.container {
+    height: 100%;
+    background-color: rgb(201, 255, 237);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.task-container {
+    margin-left: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+.task {
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 8px 8px;
+}
+
+.task-description {
+    border-end-start-radius: 10px;
+    border-start-start-radius: 10px;
+    line-height: 3rem;
+    padding-left: 20px;
+    height: 3rem;
+    width: 500px;
+    background-color: wheat;
+}
+
+.task-actions {
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 30px;
+}
+
+.task-actions button {
+    border: 0px solid transparent;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    height: 3rem;
+    width: 100px;
+}
+
+.task-actions button:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.task-complete:enabled {
+    background-color: rgb(144, 255, 144);
+}
+
+.task-complete:selection {
+    background-color: rgb(131, 255, 131);
+}
+
+.task-edit {
+    background-color: rgb(255, 255, 111);
+}
+
+.task-delete {
+    background-color: rgb(255, 121, 121);
+}
